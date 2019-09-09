@@ -3,7 +3,7 @@ package com.bank.web.command;
 import javax.servlet.http.HttpServletRequest;
 
 import com.bank.web.domains.CustomerBean;
-import com.bank.web.serviceimpls.MemberServiceimpl;
+import com.bank.web.serviceImpls.MemberServiceImpl;
 import com.bank.web.services.MemberService;
 
 public class CreateCommand extends MoveCommand{
@@ -15,7 +15,7 @@ public CreateCommand (HttpServletRequest request) throws Exception {
 		public void execute() {
 			super.execute();
 			CustomerBean param = new CustomerBean();
-			MemberService service = new MemberServiceimpl();
+			MemberService service = new MemberServiceImpl();
 				                        
             param.setId(request.getParameter("id"));
             param.setPw(request.getParameter("pw")); 
