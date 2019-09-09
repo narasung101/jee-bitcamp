@@ -18,10 +18,10 @@ public class AccountController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("맥락이 맞아 여기에 도착함");
+		System.out.println("==AccountController 진입함 ==");
+		AccountService service = new AccountServiceimpl();
 		String money = request.getParameter("money");
-		AccountService service = new AccountServiceimpl(); 
-		
+				
 		//service.createAccount(money);
 		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/views/account/account.jsp");
 		rd.forward(request, response);
